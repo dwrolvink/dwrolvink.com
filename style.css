@@ -1,0 +1,123 @@
+/* --------------------------------------------
+                Compatibility 
+ -------------------------------------------- */
+
+header, section, footer, aside, nav, main, article, figure {
+  display: block; 
+}
+
+
+/* --------------------------------------------
+        Colors, opacity, and backgrounds
+ --------------------------------------------*/
+
+body {
+    background-color: rgb(0, 0, 0, 1);
+    color: #999;
+    text-rendering: optimizeLegibility;
+}
+
+body::after{
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;       
+    background-image: url("Images/background.jpg");
+    background-repeat: repeat;
+    z-index:-1;
+}
+
+em {
+    color: white; font-weight: bold; font-style: normal;
+}
+
+header, main {
+    opacity:0.95;
+}
+
+section {
+    background-color: #000000;
+}
+
+h1 {
+    color: #fff; 
+    text-shadow:  1px 1px 2px rgba(0,0,0,1), 2px 3px 0px rgba(150, 150, 255, 0.3);
+}
+
+h2, h3, h4 {
+    color: #fff; 
+    text-decoration: underline;
+}
+
+a:link {
+    color: #51ff00;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #3ab600;
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #c8ff00;
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #51ff00;
+    text-decoration: none;
+  }
+
+
+/* --------------------------------------------
+        Padding, margin, width 
+ -------------------------------------------- */
+
+body {
+    padding:20px;
+}
+
+header, main {
+    width: 90vw;
+    max-width:800px;
+    margin: auto;
+
+  
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;  
+}
+
+/* Fonts */
+header, main {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.8em;
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1.2em;
+}
+
+h2, h3, h4 {
+    font-size: 1em;
+}
+
+/* --------------------------------------------
+                    Elements 
+ -------------------------------------------- */
+
+ul {
+    list-style-type: none;
+}
+
