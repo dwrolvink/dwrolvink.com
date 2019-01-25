@@ -133,7 +133,7 @@ ul {
      color: rgb(204, 195, 195); text-shadow: none;
  }
 
- .column a:link, a:link, a:visited{
+ .column a:link, .column a:link, .column a:visited{
      color: #7da5fa;
  }
 
