@@ -13,9 +13,12 @@ header, section, footer, aside, nav, main, article, figure {
 
 body {
     background-color: rgb(0, 0, 0, 1);
-    color: rgb(203, 191, 231);
-    text-rendering: optimizeLegibility;
+	color: rgb(203, 191, 231);
+	text-rendering: initial;
 }
+
+
+
 
 body::after{
     content: "";
@@ -50,8 +53,7 @@ h1 {
 
 h2, h3, h4 {
     color: #fff; 
-	text-decoration: underline;
-	font-weight: normal; line-height: 20px;
+	line-height: 20px;
 }
 
 a:link {
@@ -83,36 +85,51 @@ a:link {
  -------------------------------------------- */
 
 body {
-    padding:20px;
+    padding:5vw;
 }
 
 header, main {
-    width: 90%;
     max-width:800px;
     margin: auto;
 }
 article {
-    margin-bottom:30px;
+    margin-bottom:1vw;
 } 
 section {
-    padding: 20px; 
-    margin-bottom: 20px;  
-}
-
-/* Fonts */
-header, main {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 0.9em;
+    padding: 3vh;
+    margin-bottom: 2vh;
 }
 
 h1 {
-    font-family: 'Major Mono Display', monospace;
-    font-size: 1em;
+	margin-bottom: 2vh;
+	margin-top:2vh;
 }
 
-h2, h3, h4 {
-    font-size: 1em;
+/* --------------------------------------------
+        Fontsizes / fonts
+ -------------------------------------------- */
+html {
+	font-size:1vw;
 }
+header,
+main {
+	font-family: 'Source Code Pro', monospace;
+	font-size:1rem;
+}
+
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+	font-size: 1rem;
+}
+
+
+h2, h3, h4 {
+    font-size: 1rem;
+}
+
+
+
 
 /* --------------------------------------------
                     Elements 

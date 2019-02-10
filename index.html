@@ -2,7 +2,8 @@
 <html>
 
   <head>
-      <meta charset="UTF-8" />
+	  <meta charset="UTF-8" />
+	  
       <title>dwrolvink.com</title>
       <link rel="stylesheet" type="text/css" href="style.css" />
       <link rel="icon" href="fav.png">
@@ -12,10 +13,11 @@
 
       <style>
 
-          .button {
-              padding:5px; background-color:rgb(66, 66, 66);
-			  float:left; margin:2px;
+          .buttonr {
+			  padding:1vh;
+			  margin:0.5vh;
 			  cursor: pointer;
+			  
           }
 
       </style>
@@ -23,71 +25,97 @@
   </head>
 
 	<body>
-		<header id="header">
+		<header id="headerdiv">
 			
 			<section>
-            	<article style="text-align: center;">
+            	<article style="text-align: center; ">
                 	<h1>d w r o l v i n k . c o m !</h1>
 				</article>
 				<article>
-					<div style="height:1em; width:100%;">
-						<div class="button" style="background-color:rgb(69, 79, 90);" onclick="LoadDiv('main','columns',false);">Columns</div> 
-						<div class="button" style="background-color:rgb(90, 69, 90);" onclick="LoadDiv('main','contact',false);">Contact</div> 
+						<p class="buttonr" style="background-color:rgb(69, 79, 90); " onclick="LoadDiv('main','columns',false);">Columns</p> 
+						<p class="buttonr" style="background-color:rgb(90, 69, 90); " onclick="LoadDiv('main','contact',false);">Contact</p> 
 					</div>
 				</article>
-      </section>      
-      
-      <section>
-          <article>
-            <h1>under construction</h1>
-            <p>
-              Thanks for browsing to my website! I <em>just</em> set it up, I expect this site will be more to look at within 2 months.
-            </p>
-          </article>
-      </section>         
-          
-    </header>
+      		</section>      
+		</header>
 
     <main id="main">
- 
+			
     </main>
 
 <div class="hidden" id="placeholder"></div>
 
     <script>
+		// Call LoadHomePage when the page is done loading.
+		window.onload = function () {
+			LoadHomePage();
+		}	
 		
+		// Load default elements on first loading page
         function LoadHomePage(){
 			var view = getParameterByName('view');
 
+			// Currently loading the "under construction" message in the header div
+			LoadDiv('headerdiv','header',true);
+
+			// Load the html for in the main div
 			if (view) {
 				LoadDiv('main',view,false);
 			}
 			else {
 				LoadDiv('main','contact',false);
 			}
-			
 		}
 
-        var HTMLLoader = ["file", "response", "CallBackFunction","FunctionOptions"];
-
+		// Ask GetHTML to pick up the html for a file, and call back to LoadDivExecute when ready
         function LoadDiv(id, name, add=false){
 			var file = "Pages/" + name + ".html";
 
-			HTMLLoader = [file, "", LoadDivExecute, [id, add]];
-			GetHTML(HTMLLoader);
+			HTMLLoaderElement = [file, LoadDivExecute, [id, add]];
+			GetHTML(HTMLLoaderElement);
 			window.history.pushState(name, 'dwrolvink.com', '?view='+name);
-        }
+		}
+		
+		// Gets content from a file and returns it to the callback function + the callback options
+		// Takes in a Loader element:
+		// [filename, function to call back when ready, option(s)) for callbackfunction]
+		function GetHTML(Loader){
+			var file = Loader[0];
+			var CallbackFunction = Loader[1];
+			var CallbackOptions = Loader[2];
 
-    	function LoadDivExecute(options){
+			// Define what to do when you get the answer of the request
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4) {
+					if (this.status == 200) {
+						// CallBack
+						CallbackFunction(this.responseText, CallbackOptions);
+					}
+					if (this.status == 404) {
+						console.log("File not found.");
+					}
+				}
+			} 
+			// Make the HTML request
+			xhttp.open("GET", file, true);
+			xhttp.send();
+		}
+
+		// Puts html received from GetHTML into an element with given id.
+    	function LoadDivExecute(response, options){
       		var id = options[0];
       		var add = options[1];
-			var html = HTMLLoader[1];
+			var html = response;
 
 			SetInnerHTMLByID(id, html, add);
 			
+			// Replace the eva code (for the pictograms)
 			eva.replace();
     	}
 
+		// Sets innerhtml of a given element. 
+		// Adds it instead of replacing when add=true
 		function SetInnerHTMLByID(id, html, add=false){
 			if (add){
 				document.getElementById(id).innerHTML += html;
@@ -97,34 +125,12 @@
 			}
 		}
 
+		// Returns innerhtml of an element with given id
 		function GetInnerHTMLByID(id){
 			return document.getElementById(id).innerHTML;
 		}    
 
-		function GetHTML(Loader){
-			var file = Loader[0];
-
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4) {
-					if (this.status == 200) {
-						Loader[1] = this.responseText;
-						Loader[2](Loader[3]);
-					}
-					if (this.status == 404) {
-						console.log("Page not found.");
-					}
-				}
-			} 
-			xhttp.open("GET", file, true);
-			xhttp.send();
-		}
-
-		window.onload = function () {
-			LoadHomePage();
-			
-		}
-
+		// Get the value of a GET variable
 		function getParameterByName(name, url) {
 			if (!url) url = window.location.href;
 			name = name.replace(/[\[\]]/g, '\\$&');
