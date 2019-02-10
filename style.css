@@ -125,18 +125,19 @@ ul {
                     Classes 
  -------------------------------------------- */
  .column {
-     background-color: rgb(9, 73, 156);
-     color: #fff;
+     background-color: rgb(240, 240, 240);
+	 color: rgb(46, 46, 46);
+	 font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
  }
 
  .column h1 {
-     color: rgb(204, 195, 195); text-shadow: none;
+     color: rgb(11, 30, 48); text-shadow: none;
  }
 
  .column a:link, .column a:link, .column a:visited{
-     color: #7da5fa;
+     color: #0264d4;
  }
 
  .column a:hover{
-    color: #9be6fd;
+    color: #f81eff;
 }
