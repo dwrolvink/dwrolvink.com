@@ -86,7 +86,7 @@ body {
 }
 
 header, main {
-    width: 90vw;
+    width: 90%;
     max-width:800px;
     margin: auto;
 }
