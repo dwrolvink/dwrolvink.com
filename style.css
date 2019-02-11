@@ -89,11 +89,14 @@ body {
 }
 
 header, main {
-    max-width:800px;
+	width:50vw;
+	min-width:600px;
+	max-width:800px;
     margin: auto;
 }
 article {
-    margin-bottom:1vw;
+	margin-bottom:1vw;
+	max-height: 999999px;
 } 
 section {
     padding: 3vh;
@@ -157,6 +160,10 @@ ul {
 	margin:0.5vh;
 	cursor: pointer;
 	font-family: SFMono, Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+
+.buttonr:hover {
+	background-color: #51ff00;
 }
 
 #nothing {
