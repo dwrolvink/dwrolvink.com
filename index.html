@@ -8,19 +8,10 @@
       <link rel="stylesheet" type="text/css" href="style.css" />
       <link rel="icon" href="fav.png">
 
-      <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Source+Code+Pro" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Source+Code+Pro|Open+Sans" rel="stylesheet" />
       <script src="https://unpkg.com/eva-icons"></script>
 
-      <style>
-
-          .buttonr {
-			  padding:1vh;
-			  margin:0.5vh;
-			  cursor: pointer;
-			  
-          }
-
-      </style>
+  
 
   </head>
 
@@ -29,7 +20,7 @@
 			
 			<section>
             	<article style="text-align: center; ">
-                	<h1>d w r o l v i n k . c o m !</h1>
+                	<h1 style="font-size: 0.8rem;">d w r o l v i n k . c o m !</h1>
 				</article>
 				<article>
 						<p class="buttonr" style="background-color:rgb(69, 79, 90); " onclick="LoadDiv('main','columns',false);">Columns</p> 
@@ -43,7 +34,7 @@
 			
     </main>
 
-<div class="hidden" id="placeholder"></div>
+
 
     <script>
 		// Call LoadHomePage when the page is done loading.
@@ -141,6 +132,16 @@
 			if (!results[2]) return '';
 			
 			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+
+		function GetMail(){
+			var Ihopebotsarestupid = ["d", "w", "rolv", "ink", "@", "gm", "ail.", "com"];
+			var str = '';
+			Ihopebotsarestupid .forEach(element => {
+				str+= element;
+			});
+
+			return str;
 		}
       </script>
 
