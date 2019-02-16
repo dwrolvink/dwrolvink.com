@@ -9,9 +9,12 @@
       <link rel="icon" href="fav.png">
 
       <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Source+Code+Pro|Open+Sans" rel="stylesheet" />
-      <script src="https://unpkg.com/eva-icons"></script>
+	  <script src="https://unpkg.com/eva-icons"></script>
 
-  
+  	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+	<link rel="stylesheet" href="/styles/default.css">
+	<script src="/js/highlight.pack.js"></script>
 
   </head>
 
@@ -20,7 +23,7 @@
 			
 			<section>
             	<article style="text-align: center; ">
-                	<h1 style="font-size: 0.8rem;">d w r o l v i n k . c o m !</h1>
+                	<h1 style="">d w r o l v i n k . c o m !</h1>
 				</article>
 				<article>
 						<p class="buttonr" style="background-color:rgb(69, 79, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(69, 79, 90)';" onclick="LoadDiv('main','columns',false);">Columns</p> 
@@ -32,7 +35,10 @@
 
     <main id="main">
 			
-    </main>
+	</main>
+	<div id="content">
+	</div>
+
 
 
 
@@ -66,6 +72,7 @@
 			GetHTML(HTMLLoaderElement);
 			window.history.pushState(name, 'dwrolvink.com', '?view='+name);
 		}
+
 		
 		// Gets content from a file and returns it to the callback function + the callback options
 		// Takes in a Loader element:
@@ -99,11 +106,61 @@
       		var add = options[1];
 			var html = response;
 
+			html = LoadMarkdown(html);
 			SetInnerHTMLByID(id, html, add);
+
+			document.querySelectorAll('pre code').forEach((block) => {
+    			hljs.highlightBlock(block);
+ 	 		});
 			
 			// Replace the eva code (for the pictograms)
 			eva.replace();
-    	}
+
+			LoadTogglingArticle();
+		}
+		function LoadTogglingArticle(){
+			document.querySelectorAll("article[id^=article-]").forEach((article) => {
+				var section = article.parentElement;
+				var id = article.id.split('-')[1];
+
+				var expander = '<div class="expander" id="expander-'+id+'"  onclick="ToggleColumn(this.id)" > \
+							<img id="expander-icon-'+id+'" src="Images/triangle.png"  style="width:20px; height: auto; transform: rotate(180deg);" /> \
+							</div>';				
+
+				section.innerHTML += expander;
+			  });			
+		}
+
+		function LoadMarkdown(html){
+			var parts = [],
+				parsedHTML = '';
+
+			parts = html.split(/<\/?markdown>/g); // first element is empty or html, second element is markdown, third element is empty or html, etc
+
+			for(var i=0; i<parts.length; i++)
+			{
+				// odd
+				if(i%2){
+					var lines = parts[i].split(/\n/);
+					var newpart = '';
+
+					indentation = lines[1].search(/\S/); 
+
+					lines.slice(1,).forEach(function(line){
+						if (line){
+							if (indentation > 0){
+								line = line.slice(indentation);
+							}	
+						}					
+						newpart += line + "\n";
+					})					
+					parts[i] = marked(newpart);
+				}
+				parsedHTML += parts[i];
+			}
+
+			return parsedHTML;
+		}
 
 		// Sets innerhtml of a given element. 
 		// Adds it instead of replacing when add=true
@@ -143,6 +200,34 @@
 
 			return str;
 		}
+
+		function ToggleColumn(expanderID){
+			var id = expanderID.split("-")[1];
+			console.log(expanderID);
+			var expander = document.getElementById("expander-" + id);
+			var expanderIcon = document.getElementById("expander-icon-" + id);
+			var article = document.getElementById("article-" + id);
+			var section = article.parentElement;
+			var state = expanderIcon.style.transform;
+
+			if (state == 'rotate(180deg)'){
+				// flip icon		
+				expanderIcon.style.transform = "rotate(0deg)";
+
+				// expand article
+				article.style.maxHeight='999999px';  
+				article.style.cursor='auto';
+			}
+			else{
+				// flip icon		
+				expanderIcon.style.transform = "rotate(180deg)";
+
+				// fold article
+				article.style.maxHeight='20vh';  
+				article.style.cursor='pointer';
+			}
+		}
+
       </script>
 
   </body>
