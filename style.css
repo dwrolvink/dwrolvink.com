@@ -17,9 +17,6 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
-
-
-
 body::after{
     content: "";
     opacity: 0.5;
@@ -45,8 +42,6 @@ header, main {
 section {
     background-color: #000000;
 }
-
-
 
 h1, title {
 	font-family: 'Major Mono Display', monospace;
@@ -88,22 +83,20 @@ a:link {
  -------------------------------------------- */
 
 body {
-    padding:5vw;
+    padding:0px; margin:0px;
 }
 
 header, main {
-	width:50vw;
-	min-width:600px;
-	max-width:800px;
-    margin: auto;
+	margin: auto;
+	margin-top:0px;
 }
 article {
-	margin-bottom:1vw;
+	padding:3vh;
 	max-height: 999999px;
 } 
 section {
     padding: 3vh;
-    margin-bottom: 2vh;
+   
 }
 
 h1, title {
@@ -179,10 +172,11 @@ ul {
 	color: rgb(26, 26, 26);
 	font-family: SFMono-Regular, Open Sans, Consolas,Liberation Mono,Menlo,Courier,monospace;
 	padding:0px;
+	margin-bottom:3vh;
 }
 
 .column article {
-	margin:3vh;
+	
 	padding-top:5vh;
 	padding-bottom:5vh;
 }

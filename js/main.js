@@ -21,7 +21,7 @@
 
 		// Ask GetHTML to pick up the html for a file, and call back to LoadDivExecute when ready
         function LoadDiv(id, name, add=false){
-			var file = "Pages/" + name + ".html";
+			var file = 'http://127.0.0.1:8080/' + name;
 
 			HTMLLoaderElement = [file, LoadDivExecute, [id, add]];
 			GetHTML(HTMLLoaderElement);
