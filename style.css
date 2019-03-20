@@ -17,6 +17,7 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+/*
 body::after{
     content: "";
     opacity: 0.5;
@@ -30,6 +31,7 @@ body::after{
     background-repeat: repeat;
     z-index:-1;
 }
+*/
 
 em {
     color: white; font-weight: bold; font-style: normal;
@@ -93,6 +95,7 @@ header, main {
 article {
 	padding:3vh;
 	max-height: 999999px;
+	max-width:800px;
 } 
 section {
     padding: 3vh;
@@ -221,9 +224,9 @@ ul {
 
 
 .expander {
-	width:100%; margin:10px; text-align: center; 
+	width:100%; margin:10px; text-align: left;
 	cursor:pointer;
-	margin:0px;
+	margin:0px; margin-left:3vh;
 	background-color: rgb(230, 228, 228);
 }
 
