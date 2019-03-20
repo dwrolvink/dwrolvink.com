@@ -161,7 +161,7 @@ ul {
 
  .buttonr {
 	padding:1vh;
-	margin:0.5vh;
+	margin:0;
 	cursor: pointer;
 	font-family: SFMono, Consolas,Liberation Mono,Menlo,Courier,monospace;
 }
@@ -184,11 +184,14 @@ ul {
 .column article {
 	margin:3vh;
 	padding-top:5vh;
+	padding-bottom:5vh;
 }
 
 .long {
-
 	position: relative;
+}
+.long article {
+	overflow: hidden; max-height: 20vh;
 }
 
  .column h1, 
@@ -221,9 +224,7 @@ ul {
 	border:1px solid gray;
 }
 
-.long article {
-	overflow: hidden; max-height: 20vh;
-}
+
 
 .expander {
 	width:100%; margin:10px; text-align: center; 

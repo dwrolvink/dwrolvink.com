@@ -2,233 +2,57 @@
 <html>
 
   <head>
-	  <meta charset="UTF-8" />
+	  	<meta charset="UTF-8" />
 	  
-      <title>dwrolvink.com</title>
-      <link rel="stylesheet" type="text/css" href="style.css" />
-      <link rel="icon" href="fav.png">
+		<title>dwrolvink.com</title>
+		<link rel="icon" href="fav.png">
+		
+		<!-- Main site -->
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="/js/main.js"></script>
+      	
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Source+Code+Pro|Open+Sans" rel="stylesheet" />
 
-      <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Source+Code+Pro|Open+Sans" rel="stylesheet" />
-	  <script src="https://unpkg.com/eva-icons"></script>
+		<!-- Icons-->
+		<script src="/js/eva-icons.js"></script>
+		  
+		<!-- Markdown-->
+		<script src="/js/marked.js"></script>
 
-  	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-	<link rel="stylesheet" href="/styles/default.css">
-	<script src="/js/highlight.pack.js"></script>
+		<!-- Code syntax hghlighting-->
+		<link rel="stylesheet" href="/styles/default.css">
+		<script src="/js/highlight.pack.js"></script>
 
   </head>
 
 	<body>
+		<!-- Contents for every page (top) -->
 		<header id="headerdiv">
 			
 			<section>
+
             	<article style="text-align: center; ">
-                	<h1 style="">d w r o l v i n k . c o m !</h1>
+					<h1>d w r o l v i n k . c o m !</h1>
 				</article>
+
 				<article>
-						<p class="buttonr" style="background-color:rgb(69, 79, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(69, 79, 90)';" onclick="LoadDiv('main','columns',false);">Columns</p> 
-						<p class="buttonr" style="background-color:rgb(90, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(90, 69, 90)';" onclick="LoadDiv('main','contact',false);">Contact</p> 
+					<div style="height:40px; text-align: center;">
+						<span class="buttonr" style="background-color:rgb(70, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(70, 69, 90)';" onclick="LoadDiv('main','columns',false);">Columns</span><span class="buttonr" style="background-color:rgb(70, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(70, 69, 90)';" onclick="LoadDiv('main','coding',false);">Coding</span><span class="buttonr" style="background-color:rgb(70, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(70, 69, 90)';" onclick="LoadDiv('main','contact',false);">Contact</span>
 					</div>
+					
+					
 				</article>
-      		</section>      
+
+			</section> 
+			       
 		</header>
 
-    <main id="main">
+		<!-- Contents for current page -->
+    	<main id="main">
 			
-	</main>
-	<div id="content">
-	</div>
+		</main>
 
-
-
-
-    <script>
-		// Call LoadHomePage when the page is done loading.
-		window.onload = function () {
-			LoadHomePage();
-		}	
-		
-		// Load default elements on first loading page
-        function LoadHomePage(){
-			var view = getParameterByName('view');
-
-			// Currently loading the "under construction" message in the header div
-			LoadDiv('headerdiv','header',true);
-
-			// Load the html for in the main div
-			if (view) {
-				LoadDiv('main',view,false);
-			}
-			else {
-				LoadDiv('main','contact',false);
-			}
-		}
-
-		// Ask GetHTML to pick up the html for a file, and call back to LoadDivExecute when ready
-        function LoadDiv(id, name, add=false){
-			var file = "Pages/" + name + ".html";
-
-			HTMLLoaderElement = [file, LoadDivExecute, [id, add]];
-			GetHTML(HTMLLoaderElement);
-			window.history.pushState(name, 'dwrolvink.com', '?view='+name);
-		}
-
-		
-		// Gets content from a file and returns it to the callback function + the callback options
-		// Takes in a Loader element:
-		// [filename, function to call back when ready, option(s)) for callbackfunction]
-		function GetHTML(Loader){
-			var file = Loader[0];
-			var CallbackFunction = Loader[1];
-			var CallbackOptions = Loader[2];
-
-			// Define what to do when you get the answer of the request
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4) {
-					if (this.status == 200) {
-						// CallBack
-						CallbackFunction(this.responseText, CallbackOptions);
-					}
-					if (this.status == 404) {
-						console.log("File not found.");
-					}
-				}
-			} 
-			// Make the HTML request
-			xhttp.open("GET", file, true);
-			xhttp.send();
-		}
-
-		// Puts html received from GetHTML into an element with given id.
-    	function LoadDivExecute(response, options){
-      		var id = options[0];
-      		var add = options[1];
-			var html = response;
-
-			html = LoadMarkdown(html);
-			SetInnerHTMLByID(id, html, add);
-
-			document.querySelectorAll('pre code').forEach((block) => {
-    			hljs.highlightBlock(block);
- 	 		});
-			
-			// Replace the eva code (for the pictograms)
-			eva.replace();
-
-			LoadTogglingArticle();
-		}
-		function LoadTogglingArticle(){
-			document.querySelectorAll("article[id^=article-]").forEach((article) => {
-				var section = article.parentElement;
-				var id = article.id.split('-')[1];
-
-				var expander = '<div class="expander" id="expander-'+id+'"  onclick="ToggleColumn(this.id)" > \
-							<img id="expander-icon-'+id+'" src="Images/triangle.png"  style="width:20px; height: auto; transform: rotate(180deg);" /> \
-							</div>';				
-
-				section.innerHTML += expander;
-			  });			
-		}
-
-		function LoadMarkdown(html){
-			var parts = [],
-				parsedHTML = '';
-
-			parts = html.split(/<\/?markdown>/g); // first element is empty or html, second element is markdown, third element is empty or html, etc
-
-			for(var i=0; i<parts.length; i++)
-			{
-				// odd
-				if(i%2){
-					var lines = parts[i].split(/\n/);
-					var newpart = '';
-
-					indentation = lines[1].search(/\S/); 
-
-					lines.slice(1,).forEach(function(line){
-						if (line){
-							if (indentation > 0){
-								line = line.slice(indentation);
-							}	
-						}					
-						newpart += line + "\n";
-					})					
-					parts[i] = marked(newpart);
-				}
-				parsedHTML += parts[i];
-			}
-
-			return parsedHTML;
-		}
-
-		// Sets innerhtml of a given element. 
-		// Adds it instead of replacing when add=true
-		function SetInnerHTMLByID(id, html, add=false){
-			if (add){
-				document.getElementById(id).innerHTML += html;
-			}
-			else{
-				document.getElementById(id).innerHTML = html;
-			}
-		}
-
-		// Returns innerhtml of an element with given id
-		function GetInnerHTMLByID(id){
-			return document.getElementById(id).innerHTML;
-		}    
-
-		// Get the value of a GET variable
-		function getParameterByName(name, url) {
-			if (!url) url = window.location.href;
-			name = name.replace(/[\[\]]/g, '\\$&');
-			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-				results = regex.exec(url);
-			
-				if (!results) return null;
-			if (!results[2]) return '';
-			
-			return decodeURIComponent(results[2].replace(/\+/g, ' '));
-		}
-
-		function GetMail(){
-			var Ihopebotsarestupid = ["d", "w", "rolv", "ink", "@", "gm", "ail.", "com"];
-			var str = '';
-			Ihopebotsarestupid .forEach(element => {
-				str+= element;
-			});
-
-			return str;
-		}
-
-		function ToggleColumn(expanderID){
-			var id = expanderID.split("-")[1];
-			console.log(expanderID);
-			var expander = document.getElementById("expander-" + id);
-			var expanderIcon = document.getElementById("expander-icon-" + id);
-			var article = document.getElementById("article-" + id);
-			var section = article.parentElement;
-			var state = expanderIcon.style.transform;
-
-			if (state == 'rotate(180deg)'){
-				// flip icon		
-				expanderIcon.style.transform = "rotate(0deg)";
-
-				// expand article
-				article.style.maxHeight='999999px';  
-				article.style.cursor='auto';
-			}
-			else{
-				// flip icon		
-				expanderIcon.style.transform = "rotate(180deg)";
-
-				// fold article
-				article.style.maxHeight='20vh';  
-				article.style.cursor='pointer';
-			}
-		}
-
-      </script>
 
   </body>
 
