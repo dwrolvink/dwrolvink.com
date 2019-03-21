@@ -6,7 +6,6 @@
 		// Load default elements on first loading page
         function LoadHomePage(){
 			var view = getParameterByName('view');
-
 			// Currently loading the "under construction" message in the header div
 			//LoadDiv('headerdiv','header',true);
 
@@ -15,13 +14,13 @@
 				LoadDiv('main',view,false);
 			}
 			else {
-			//	LoadDiv('main','contact',false);
+				LoadDiv('main','coding',false);
 			}
 		}
 
 		// Ask GetHTML to pick up the html for a file, and call back to LoadDivExecute when ready
         function LoadDiv(id, name, add=false){
-			var file = 'http://yeetbox/md/' + name + '.md';
+			var file = 'http://www.dwrolvink.com/md/' + name + '.md';
 
 			HTMLLoaderElement = [file, LoadDivExecute, [id, add]];
 			GetHTML(HTMLLoaderElement);
@@ -37,31 +36,7 @@
 
 		  	//html = LoadMarkdown(html);
 		  	SetInnerHTMLByID(id, html, add);
-
-		  	DoReplacements();
-	  	}
-
-		// Parse current page content and replace the content of blocks for formatting / adding functionality
-		function DoReplacements(){
-
-			// Add code to .column .long articles
-			LoadTogglingArticle();		  
-	  	}
-
-	  	function LoadTogglingArticle(){
-			// Get all <article id="article-[i]">
-			document.querySelectorAll("article[id^=article-]").forEach((article) => {
-				var section = article.parentElement;
-				var id = article.id.split('-')[1];
-
-				var expander = '<div class="expander" id="expander-'+id+'"  onclick="ToggleColumn(this.id)" > \
-							<img id="expander-icon-'+id+'" src="Images/triangle.png"  style="width:20px; height: auto; transform: rotate(180deg);" /> \
-							</div>';				
-
-				// Add expander button at the bottom of the section that the article is in.
-				section.innerHTML += expander;
-		  	});			
-		}	  
+	  	}  
 		
 		// Gets content from a file and returns it to the callback function
 		function GetHTML(Loader){
@@ -114,32 +89,4 @@
 			if (!results[2]) return '';
 			
 			return decodeURIComponent(results[2].replace(/\+/g, ' '));
-		}
-
-
-		function ToggleColumn(expanderID){
-			var id = expanderID.split("-")[1];
-			console.log(expanderID);
-			var expander = document.getElementById("expander-" + id);
-			var expanderIcon = document.getElementById("expander-icon-" + id);
-			var article = document.getElementById("article-" + id);
-			var section = article.parentElement;
-			var state = expanderIcon.style.transform;
-
-			if (state == 'rotate(180deg)'){
-				// flip icon		
-				expanderIcon.style.transform = "rotate(0deg)";
-
-				// expand article
-				article.style.maxHeight='999999px';  
-				article.style.cursor='auto';
-			}
-			else{
-				// flip icon		
-				expanderIcon.style.transform = "rotate(180deg)";
-
-				// fold article
-				article.style.maxHeight='20vh';  
-				article.style.cursor='pointer';
-			}
 		}
