@@ -11,12 +11,12 @@ I stopped at the first javascript markdown-to-html converter that seemed simple 
 I used [Marked](https://marked.js.org/), and installed it by putting the following in my html head:
 
 ```html 
-	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 ```
 
 Then, to convert markdown to html is as easy as:
 ```javascript
-	html = marked(markdown);
+html = marked(markdown);
 ```		
 
 This won't highlight the syntax though.
@@ -27,14 +27,14 @@ Put the `/styles/` folder in your root (or where-ever you want it), and the high
 
 Then, you add the following to your html head (adjust the paths for your setup):
 ```html 
-	<link rel="stylesheet" href="/styles/default.css">
-	<script src="/js/highlight.pack.js"></script>
+<link rel="stylesheet" href="/styles/default.css">
+<script src="/js/highlight.pack.js"></script>
 ```
 
 On now you can use `<script>hljs.initHighlightingOnLoad();</script>`, but because I add markdown into my articles, and load the articles in after the document has loaded, then convert the markdown
 to html, I have to do it exactly after that point:
 ```javascript
-	document.querySelectorAll('pre code').forEach((block) => {
-		hljs.highlightBlock(block);
-	});
+document.querySelectorAll('pre code').forEach((block) => {
+	hljs.highlightBlock(block);
+});
 ```

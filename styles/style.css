@@ -1,0 +1,102 @@
+header, title, content, section, footer, aside, nav, main, article, figure {
+  display: block; 
+}
+
+/* --------------------------------------------
+      General
+ -------------------------------------------- */
+em {
+    color: white; font-weight: bold; font-style: normal;
+}
+
+section {
+	background-color: #000000;
+	padding: 3vh;
+}
+
+article {
+	padding:3vh;
+	max-height: 999999px;
+} 
+/* --------------------------------------------
+       Header
+ -------------------------------------------- */
+ #headerdiv h1{
+	font-family: 'Major Mono Display', monospace;
+    color: #fff; 
+	text-shadow:  1px 1px 2px rgba(0,0,0,1), 2px 3px 0px rgba(150, 150, 255, 0.3);
+	font-size: 1em;
+}
+#headerdiv {
+	background-color:black;
+}
+header article {
+	padding:0.5vh; margin:0px;
+}
+header {
+	margin: auto;
+	margin-top:0px;
+}
+/* --------------------------------------------
+       Main
+ -------------------------------------------- */
+main {
+	background-color:rgba(15,26,48,0.8)
+}
+/* --------------------------------------------
+                    Classes 
+ -------------------------------------------- */
+ .buttonr {
+	padding:1vh;
+	margin:0;
+	color: rgb(203, 191, 231);
+	cursor: pointer;
+	font-family: SFMono, Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+/* --------------------------------------------
+       Links
+ -------------------------------------------- */
+a:link {
+    color: #51ff00;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #3ab600;
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #c8ff00;
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #51ff00;
+    text-decoration: none;
+  }
+/* --------------------------------------------
+       Body
+ -------------------------------------------- */
+ body {
+    background-color: rgb(0, 0, 0, 1);
+	text-rendering: optimizeLegibility;
+	padding:0px; margin:0px;
+}
+
+body::after{
+    content: "";
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;       
+    background-image: url("Images/background.jpg");
+    background-repeat: repeat;
+    z-index:-1;
+}

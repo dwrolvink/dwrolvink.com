@@ -35,7 +35,7 @@
 			var add = options[1];
 		  	var html = response;
 
-		  	html = LoadMarkdown(html);
+		  	//html = LoadMarkdown(html);
 		  	SetInnerHTMLByID(id, html, add);
 
 		  	DoReplacements();
@@ -43,13 +43,6 @@
 
 		// Parse current page content and replace the content of blocks for formatting / adding functionality
 		function DoReplacements(){
-			// get all <pre><code> blocks, and apply highlighting
-			document.querySelectorAll('pre code').forEach((block) => {
-				hljs.highlightBlock(block);
-		  	});
-		
-			// Replace the eva code (for the pictograms)
-			eva.replace();
 
 			// Add code to .column .long articles
 			LoadTogglingArticle();		  
@@ -94,48 +87,6 @@
 			xhttp.send();
 		}
 
-		function LoadMarkdown(html){
-			var parts = [],
-				parsedHTML = ''; // acc
-
-			// Split html on the occurence of <markdown> and </markdown>
-			parts = html.split(/<\/?markdown>/g); // first element is empty or html, second element is markdown, third element is empty or html, etc
-
-			// Foreach part of code, just add it to parsedHTML if it's html; 
-			// if it is markdown, parse it and add the resultant html to parsedHTML
-			for(var i=0; i<parts.length; i++)
-			{
-				// Markdown
-				if(i%2)
-				{
-					// acc
-					var newpart = '';
-					
-					// Split the markdown into lines, and get the number of spaces proceeding the first line
-					var lines = parts[i].split(/\n/);
-					indentation = lines[1].search(/\S/); 
-
-					// for each line, remove the first x characters from the line, where x is the number of proceeding spaces on the first line.
-					// (otherwise, the markdown would show the indentation of the document, which should be ignored)
-					lines.slice(1,).forEach(function(line){
-						if (line){
-							if (indentation > 0){
-								line = line.slice(indentation);
-							}	
-						}					
-						newpart += line + "\n";
-					})					
-					
-					// convert cleaned markdown to html
-					parts[i] = marked(newpart);
-				}
-
-				parsedHTML += parts[i];
-			}
-
-			return parsedHTML;
-		}
-
 		// Sets innerhtml of a given element. 
 		// Adds it instead of replacing when add=true
 		function SetInnerHTMLByID(id, html, add=false){
@@ -165,15 +116,6 @@
 			return decodeURIComponent(results[2].replace(/\+/g, ' '));
 		}
 
-		function GetMail(){
-			var Ihopebotsarestupid = ["d", "w", "rolv", "ink", "@", "gm", "ail.", "com"];
-			var str = '';
-			Ihopebotsarestupid .forEach(element => {
-				str+= element;
-			});
-
-			return str;
-		}
 
 		function ToggleColumn(expanderID){
 			var id = expanderID.split("-")[1];

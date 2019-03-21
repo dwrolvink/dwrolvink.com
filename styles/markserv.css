@@ -1,6 +1,6 @@
 
 .markdown-body {
- margin-left:5vh; padding: 30px; background-color:white; max-width:1024px; padding-bottom:10vh;
+ margin-left:5vh; margin-right:5vh; padding: 30px; background-color:white; max-width:1024px; padding-bottom:10vh;
 }
 
 
@@ -78,7 +78,7 @@ li.icon {
   -webkit-text-size-adjust: 100%;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
-  font-size: 16px;
+  font-size: 1.8vh;
   line-height: 1.6;
   word-wrap: break-word;
 }
@@ -228,7 +228,7 @@ li.icon {
 .markdown-body h5[id]:before,
 .markdown-body h6[id]:before {
   font-family: octicons-anchor;
-  font-size: 16px;
+  font-size: 1em;
   outline: none;
   content: '\f05c';
   display: none;
@@ -327,7 +327,7 @@ li.icon {
   font-size: 1em;
 }
 .markdown-body h6 {
-  font-size: 1em;
+  font-size: 1vh;
   color: #777;
 }
 .markdown-body p,
@@ -367,7 +367,7 @@ li.icon {
 .markdown-body dl dt {
   padding: 0;
   margin-top: 16px;
-  font-size: 1em;
+  font-size: 1vw;
   font-style: italic;
   font-weight: bold;
 }
@@ -596,5 +596,5 @@ a.button.back {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1vw;
 }
