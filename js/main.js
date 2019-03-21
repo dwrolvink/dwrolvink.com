@@ -8,20 +8,20 @@
 			var view = getParameterByName('view');
 
 			// Currently loading the "under construction" message in the header div
-			LoadDiv('headerdiv','header',true);
+			//LoadDiv('headerdiv','header',true);
 
 			// Load the html for in the main div
 			if (view) {
 				LoadDiv('main',view,false);
 			}
 			else {
-				LoadDiv('main','contact',false);
+			//	LoadDiv('main','contact',false);
 			}
 		}
 
 		// Ask GetHTML to pick up the html for a file, and call back to LoadDivExecute when ready
         function LoadDiv(id, name, add=false){
-			var file = 'http://127.0.0.1:8080/' + name;
+			var file = 'http://web001/md/' + name + '.md';
 
 			HTMLLoaderElement = [file, LoadDivExecute, [id, add]];
 			GetHTML(HTMLLoaderElement);

@@ -1,0 +1,112 @@
+No entry for terminal type "rxvt-unicode-256color";
+using dumb terminal settings.
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45920 [200]: /?view=contact
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45922 [200]: /js/main.js
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45924 [200]: /highlight-js-github-gist.css
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45926 [200]: /style.css
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45928 [200]: /markserv.css
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45930 [200]: /styles/default.css
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45932 [200]: /js/eva-icons.js
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45934 [200]: /js/marked.js
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45936 [200]: /js/highlight.pack.js
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45938 [200]: /Images/background.jpg
+[Thu Mar 21 00:49:12 2019] 127.0.0.1:45942 [200]: /fav.png
+  Markserv   boot: starting Markserv...
+  Markserv   address: http://0.0.0.0:8081
+  Markserv   path: /var/www/dwrolvink.github.io
+  Markserv   livereload: communicating on port: 35729
+  Markserv   process: your pid is: 18587
+  Markserv   stop: press [Ctrl + C] or type "sudo kill -9 18587"
+    GitHub   Contribute on Github - github.com/markserv
+ ▕● PATREON  Help support Markserv - Become a Patreon! patreon.com/f1lt3r
+  Markserv   upgrade: checking for upgrade...
+  Markserv   upgrade: no upgrade available
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+Error: Exited with code 3
+    at ChildProcess.cp.once.code (/usr/local/share/.config/yarn/global/node_modules/opn/index.js:85:13)
+    at Object.onceWrapper (events.js:285:20)
+    at ChildProcess.emit (events.js:197:13)
+    at maybeClose (internal/child_process.js:988:16)
+    at Socket.stream.socket.on (internal/child_process.js:404:11)
+    at Socket.emit (events.js:197:13)
+    at Pipe._handle.close (net.js:611:12)
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45962 [200]: /?view=coding
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45964 [200]: /js/main.js
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45966 [200]: /highlight-js-github-gist.css
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45968 [200]: /style.css
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45970 [200]: /markserv.css
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45972 [200]: /js/eva-icons.js
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45974 [200]: /js/marked.js
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45976 [200]: /styles/default.css
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45978 [200]: /js/highlight.pack.js
+[Thu Mar 21 00:50:07 2019] 127.0.0.1:45980 [200]: /Images/background.jpg
+[Thu Mar 21 00:50:08 2019] 127.0.0.1:45984 [200]: /fav.png
+  Markserv   boot: starting Markserv...
+  Markserv   address: http://0.0.0.0:8081
+  Markserv   path: /var/www/dwrolvink.github.io
+  Markserv   livereload: communicating on port: 35729
+  Markserv   process: your pid is: 18633
+  Markserv   stop: press [Ctrl + C] or type "sudo kill -9 18633"
+    GitHub   Contribute on Github - github.com/markserv
+ ▕● PATREON  Help support Markserv - Become a Patreon! patreon.com/f1lt3r
+  Markserv   upgrade: checking for upgrade...
+  Markserv   upgrade: no upgrade available
+  Markserv   dir: /var/www/dwrolvink.github.io/
+  Markserv   file: /var/www/dwrolvink.github.io/CNAME
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/columns.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/columns.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/columns.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/columns.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   404: /var/www/dwrolvink.github.io/md/index.md.md
+{ Error: ENOENT: no such file or directory, stat '/var/www/dwrolvink.github.io/md/index.md.md'
+    at Object.statSync (fs.js:871:3)
+    at /usr/local/share/.config/yarn/global/node_modules/markserv/lib/server.js:435:14
+    at call (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:239:7)
+    at next (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:183:5)
+    at Function.handle (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:186:3)
+    at Server.app (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:51:37)
+    at Server.emit (events.js:197:13)
+    at parserOnIncoming (_http_server.js:680:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:113:17)
+  errno: -2,
+  syscall: 'stat',
+  code: 'ENOENT',
+  path: '/var/www/dwrolvink.github.io/md/index.md.md' }
+  Markserv   404: /var/www/dwrolvink.github.io/md/index.md.md
+{ Error: ENOENT: no such file or directory, stat '/var/www/dwrolvink.github.io/md/index.md.md'
+    at Object.statSync (fs.js:871:3)
+    at /usr/local/share/.config/yarn/global/node_modules/markserv/lib/server.js:435:14
+    at call (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:239:7)
+    at next (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:183:5)
+    at Function.handle (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:186:3)
+    at Server.app (/usr/local/share/.config/yarn/global/node_modules/connect/index.js:51:37)
+    at Server.emit (events.js:197:13)
+    at parserOnIncoming (_http_server.js:680:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:113:17)
+  errno: -2,
+  syscall: 'stat',
+  code: 'ENOENT',
+  path: '/var/www/dwrolvink.github.io/md/index.md.md' }
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/columns.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding/embedded_md.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/columns.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/coding.md
+  Markserv   markdown: /var/www/dwrolvink.github.io/md/contact.md
