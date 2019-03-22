@@ -1,6 +1,4 @@
-# I'm starting to like this "decentralized" ideology
-a.k.a.:
-# my unabomber manifesto
+# Why making your own website is good for the internet
 The reason behind leaving Facebook is that over the years, a couple of big companies have taken effective control over the internet, 
 and with it, the flow of information.
 

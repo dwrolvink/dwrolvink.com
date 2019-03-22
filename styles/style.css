@@ -52,6 +52,11 @@ main {
 	color: rgb(203, 191, 231);
 	cursor: pointer;
 	font-family: SFMono, Consolas,Liberation Mono,Menlo,Courier,monospace;
+	background-color:rgba(70, 69, 90,0.2); 
+}
+.buttonr:hover {
+	color:white;
+	background-color: rgb(48, 145, 248);
 }
 /* --------------------------------------------
        Links

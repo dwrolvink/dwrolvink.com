@@ -98,7 +98,7 @@ firewall-cmd --reload
 
 ## Activating Markserv
 As you might have noticed in the `default.conf`, `/md/` reroutes to port 8081. The idea is that Markserv runs on this port.
-Go to [Installing Markserv](ttp://www.dwrolvink.com/?view=coding/website/install_markserv) to enable Markserv.
+Go to [Installing Markserv](http://www.dwrolvink.com/?view=coding/website/install_markserv) to enable Markserv.
 
 ## Nginx and access from the internet
 I changed the default.conf file because I got `Access Controll Allow Origin` errors. I'm not really that familiar with that yet. You can more about it here: [Nginx Access-Control-Allow-Origin and CORS](https://distinctplace.com/2017/04/17/nginx-access-control-allow-origin-cors/).

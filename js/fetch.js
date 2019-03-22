@@ -1,22 +1,4 @@
-		// Call LoadHomePage when the page is done loading.
-		window.onload = function () {
-			LoadHomePage();
-		}	
-		
-		// Load default elements on first loading page
-        function LoadHomePage(){
-			var view = getParameterByName('view');
-			// Currently loading the "under construction" message in the header div
-			//LoadDiv('headerdiv','header',true);
 
-			// Load the html for in the main div
-			if (view) {
-				LoadDiv('main',view,false);
-			}
-			else {
-				LoadDiv('main','coding',false);
-			}
-		}
 
 		// Ask GetHTML to pick up the html for a file, and call back to LoadDivExecute when ready
         function LoadDiv(id, name, add=false){

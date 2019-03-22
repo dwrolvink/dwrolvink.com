@@ -69,7 +69,7 @@ vi /usr/local/share/.config/yarn/global/node_modules/markserv/lib/templates/mark
 > `/usr/local/share/.config/yarn/global/node_modules` is the location where yarn installs modules when you use the global tag and are logged in as root. If not logged in as root, it will be saved to `/home/<username>/.yarn/bin/`
 
 Delete the following line (line 17 for my version): `<footer><sup><hr> Served by <a href="https://www.npmjs.com/package/markserv">MarkServ</a> | PID: {{pid}}</sup></footer>` (You can also decide to just remove the pid if you want to).
-
+a
 I'm using markserv to serve markdown to my main website, so I actually remove everything except for the following:
 ```html
 <article class="markdown-body">
@@ -88,7 +88,7 @@ Always nice to have a service you can just turn on and not forget to uncouple th
 
 To make a service for Markserv is pretty trivial. Just make a file called `/etc/systemd/system/markserver.service`
 and give it the following content:
-```ini
+```bash
 [Unit]
 Description=Markdown service for <my website>
 

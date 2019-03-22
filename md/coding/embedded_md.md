@@ -5,6 +5,8 @@ and move on with my life. Mostly because I'm not a frontend developer and as suc
 
 Aside from having to search through a lot of options, actually setting up a markdown to html converter with syntax highlighting was relatively easy.
 
+> My website now uses a Markserv service to translate markdown. This abstracts the whole markdown thing away from the main website, while making it quite a bit more snappy. The downside is that I require a server for this, so I moved my entire site off github.io. You can read about this other method here: [Building this website](http://www.dwrolvink.com/?view=coding/website/building_this_website)
+
 ## A markdown converter
 I stopped at the first javascript markdown-to-html converter that seemed simple enough, (so I have no idea if better solutions are out there).
 

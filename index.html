@@ -25,7 +25,11 @@
 
 				<article>
 					<div style="height:40px;">
-						<span class="buttonr" style=" background-color:rgb(70, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(70, 69, 90)';" onclick="LoadDiv('main','columns',false);">Columns</span><span class="buttonr" style="background-color:rgb(70, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(70, 69, 90)';" onclick="LoadDiv('main','coding',false);">Coding</span><span class="buttonr" style="background-color:rgb(70, 69, 90); " onmouseover="this.style.backgroundColor='rgb(48, 145, 248)';" onmouseout="this.style.backgroundColor='rgb(70, 69, 90)';" onclick="LoadDiv('main','contact',false);">Contact</span>
+						<span class="buttonr" id="columns">Columns</span>
+						<span class="buttonr" id="coding">Coding</span>
+						<span class="buttonr" id="links">Links</span>
+						<span class="buttonr" id="projects">Projects</span>
+						<span class="buttonr" id="contact"">Contact</span>
 					</div>
 				</article>
 			</section>   
@@ -36,7 +40,30 @@
 			
 		</main>
 
+	<script>
+		// Call LoadHomePage when the page is done loading.
+		window.onload = function () {
+			LoadHomePage();
+		}	
+		// Load default elements on first loading page
+        function LoadHomePage(){
+			var view = getParameterByName('view');
+			// Load the html for in the main div
+			if (view) {
+				LoadDiv('main',view,false);
+			}
+			else {
+				LoadDiv('main','coding',false);
+			}
 
+			// Add onclick methods for buttons
+			var anchors = document.getElementsByClassName("buttonr");
+			for(var i = 0; i < anchors.length; i++) {
+				anchors[i].onclick = function() {
+					LoadDiv('main',this.id,false);
+				}
+			}
+		}
+	</script>
   </body>
-
 </html>
