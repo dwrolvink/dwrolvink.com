@@ -1,65 +1,67 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
+		<!-- Polite Greetings -->
 		<meta charset="UTF-8" />
 		<title>dwrolvink.com</title>
 		<link rel="icon" href="fav.png">
-		<!-- Main site -->
+
+		<!-- Fetch.js: This loads functions that help with getting the actual content of this page from a locally running Markserv service -->
 		<script src="/js/fetch.js"></script>
+
+		<!-- Main stylesheet, this has CSS for everything going on in this index.html document -->
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<!-- Markdown -->
-		<link rel="stylesheet" type="text/css" href="css/highlight-js-github-gist.css" />
+
+		<!-- Markserv stylesheet, this has CSS for all the page content (except for the syntax highlighting of the code) -->
 		<link rel="stylesheet" type="text/css" href="css/markserv.css" />
-		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Source+Code+Pro|Open+Sans" rel="stylesheet" />
+
+		<!-- Markserv highlight stylesheet, CSS for all the code syntax highlighting -->
+		<link rel="stylesheet" type="text/css" href="css/highlight-js-github-gist.css" />
+
+		<!-- Get nice font for the page title -->
+		<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Share+Tech+Mono" rel="stylesheet" />
 	</head>
 
 	<body>
-		<!-- Contents for every page (top) -->
-		<header id="headerdiv">
-			<section style="max-width:1024px; margin-left:5vh;">
-
-            	<article>
-					<h1>d w r o l v i n k . c o m !</h1>
-				</article>
-
-				<article>
-					<div style="height:40px;">
-						<span class="buttonr" id="columns">Columns</span>
-						<span class="buttonr" id="coding">Coding</span>
-						<span class="buttonr" id="links">Links</span>
-						<span class="buttonr" id="projects">Projects</span>
-						<span class="buttonr" id="contact"">Contact</span>
-					</div>
-				</article>
-			</section>   
+		<header>
+			<div id="headerContentContainer">
+				<div id="title">d w r o l v i n k . c o m !</div>
+				<div id="menu">
+					<span class="buttonr" id="columns"  >Columns</span>
+					<span class="buttonr" id="coding"   >Coding</span>
+					<span class="buttonr" id="links"    >Links</span>
+					<span class="buttonr" id="projects" >Projects</span>
+					<span class="buttonr" id="contact" >Contact</span>
+				</div>
+			</div>
 		</header>
 
-		<!-- Contents for current page -->
+		<!-- BEGIN [Contents for current page] -->
     	<main id="main">
 			
 		</main>
+		<!--  END  [Contents for current page] -->
 
+	<!-- Load contents for current page, and give menu OnClick functions -->
 	<script>
 		// Call LoadHomePage when the page is done loading.
 		window.onload = function () {
 			LoadHomePage();
 		}	
-		// Load default elements on first loading page
+		
         function LoadHomePage(){
-			var view = getParameterByName('view');
-			// Load the html for in the main div
-			if (view) {
-				LoadDiv('main',view,false);
-			}
-			else {
-				LoadDiv('main','coding',false);
-			}
-
+			// Load the contents for the page based on ?view= (All fetch related functions are in js/fetch.js)
+			LoadCurrentPage();
 			// Add onclick methods for buttons
+			SetOnClickMethods();
+		}
+
+		function SetOnClickMethods(){
+			// Set OnClick methods for the main menu.
 			var anchors = document.getElementsByClassName("buttonr");
 			for(var i = 0; i < anchors.length; i++) {
 				anchors[i].onclick = function() {
+					// OnClick Method:
 					LoadDiv('main',this.id,false);
 				}
 			}
