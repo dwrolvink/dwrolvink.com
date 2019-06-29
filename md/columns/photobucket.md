@@ -34,9 +34,8 @@ http://i240.photobucket.com/albums/ff67/wormmanager/ogame/w1.jpg
 I saved that to a text file `pd.txt`, and in the same folder, I ran the following command:
 
 ```bash
-cat pb.txt | while read file; do curl -O --referer "https://i240.photobucket.com/" ${\file}; done
+cat pb.txt | while read file; do curl -O --referer "https://i240.photobucket.com/" ${file}; done
 ```
-> remove the \\ in the code above, it's needed for my compiler to not freak out.
 
 I found out that the referer had to be the same as the image location, using `"http://s.photobucket.com/"` like in the tutorial
 didn't work for me.

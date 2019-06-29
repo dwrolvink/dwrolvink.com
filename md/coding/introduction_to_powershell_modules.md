@@ -1,4 +1,4 @@
-# Introduction to Powershell Modules</title>
+# Introduction to Powershell Modules
 
 Let's say we write a simple function, and then want to use it throughout a package, or just anywhere on our local machine. How do we make such a function available in a way that's simple and sustainable? 
 

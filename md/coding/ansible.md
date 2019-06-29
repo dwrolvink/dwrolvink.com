@@ -8,7 +8,16 @@ I don't use any placeholders (like `<username>`), instead I start a section with
 
 If I got most information in a certain section from one source, then that source will be listed at the top of the section. These sources provide more explanation (and that can be a good or a bad thing). In my workthrough I made some changes here and there to the source material, as often the source material misses steps (or fails to include necessary steps that have been explained earlier on / in other sources). 
 
+## Setting up Ansible to work with Windows
 - [Ansible - First steps](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_first_steps.md)
   Setting up Ansible, create a playbook, simple password encryption using vault
 - [Ansible - Windows - Certificate Authentication](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_windows_authentication.md)
 - [Ansible - Windows - Kerberos Authentication](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_kerberos_authentication.md)
+
+## Setting up AWX to work with Windows
+In AWX, most of the parts in "Ansible - First Steps" are not necessary, pywinrm, for example, is already installed in awx_tasks. 
+
+You should be able to follow the AWX steps without doing the Ansible part first. Note that I mainly focus on getting AWX to work with Windows after a clean install,
+rather than setting up AWX itself.
+
+- [AWX - Windows](https://github.com/dwrolvink/ansible-awx/blob/master/README.md)

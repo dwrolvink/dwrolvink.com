@@ -76,7 +76,7 @@ li.icon {
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #333;
+  color: rgb(22, 22, 22);
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 1.8vh;
   line-height: 1.6;
@@ -172,7 +172,7 @@ li.icon {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  margin-top: 15px;
+  margin-top: 30px;
   margin-bottom: 15px;
   line-height: 1.1;
 }
@@ -270,10 +270,15 @@ li.icon {
 .markdown-body h5,
 .markdown-body h6 {
   position: relative;
-  margin-top: 1em;
+  margin-top: 1.2em;
   margin-bottom: 16px;
   font-weight: bold;
   line-height: 1.4;
+}
+
+.markdown-body h5{
+	font-weight: normal;
+	font-style: italic;
 }
 .markdown-body h1 .octicon-link,
 .markdown-body h2 .octicon-link,
@@ -306,25 +311,30 @@ li.icon {
 }
 .markdown-body h1 {
   padding-bottom: 0.3em;
-  font-size: 2.25em;
+  font-size: 2.0em;
   line-height: 1.2;
   border-bottom: 1px solid #eee;
 }
 .markdown-body h2 {
   padding-bottom: 0.3em;
-  font-size: 1.75em;
+  font-size: 1.4em;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
 }
 .markdown-body h3 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.43;
 }
 .markdown-body h4 {
-  font-size: 1.25em;
+  font-size: 1em;
+  margin-bottom:0.2em;
+  padding-top:0.5em;
 }
 .markdown-body h5 {
   font-size: 1em;
+  padding-bottom: 0.2em; padding-top: 0.1em;
+  margin:0.2em; margin-left:0em;
+  color: rgb(24, 61, 104);
 }
 .markdown-body h6 {
   font-size: 1vh;
@@ -377,8 +387,10 @@ li.icon {
 }
 .markdown-body blockquote {
   padding: 0 15px;
-  color: #777;
-  border-left: 4px solid #ddd;
+  margin: 1em;
+  color: rgb(11, 18, 31);
+  border-left: 2px dotted #ddd;
+  font-family: 'Times New Roman', Times, serif;
 }
 .markdown-body blockquote > :first-child {
   margin-top: 0;
