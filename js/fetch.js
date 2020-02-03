@@ -16,7 +16,7 @@ function LoadCurrentPage(){
 // Tells GetHTML() to fetch the file, and to call LoadDivExecute() as callback function.
 // The third piece of info is the arguments that LoadDivExecute() will be given
 function LoadDiv(id, filename, add=false){
-	var file = 'http://www.dwrolvink.com/md/' + filename + '.md';
+	var file = 'https://www.dwrolvink.com/md/' + filename + '.md';
 
 	HTMLLoaderElement = [file, LoadDivExecute, [id, add]];
 	GetHTML(HTMLLoaderElement);

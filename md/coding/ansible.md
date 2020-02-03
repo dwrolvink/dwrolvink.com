@@ -11,7 +11,7 @@ If I got most information in a certain section from one source, then that source
 ## Setting up Ansible to work with Windows
 - [Ansible - First steps](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_first_steps.md)
   Setting up Ansible, create a playbook, simple password encryption using vault
-- [Ansible - Windows - Certificate Authentication](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_windows_authentication.md)
+- [Ansible - Windows - Certificate Authentication](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_certificate_authentication.md)
 - [Ansible - Windows - Kerberos Authentication](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/ansible_kerberos_authentication.md)
 
 ## Setting up AWX to work with Windows
@@ -21,3 +21,9 @@ You should be able to follow the AWX steps without doing the Ansible part first.
 rather than setting up AWX itself.
 
 - [AWX - Windows](https://github.com/dwrolvink/ansible-awx/blob/master/README.md)
+
+## Setting up Ansible-WinRM(Kerberos) in a virtualenv
+In the situation where you work on a management server shared with Linux people, you might want to install the WinRM support in a separate environment.
+The following tutorial explains how to set up such an environment, so that you can reach Windows machines over WinRM with Kerberos authentication.
+
+- [AWX - Virtualenv - WinRM(Kerberos)](https://github.com/dwrolvink/Linux/blob/master/CentOS/Ansible/virtualenv_ansible_winrm.md)
